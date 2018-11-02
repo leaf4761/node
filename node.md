@@ -43,6 +43,28 @@ nvm下载地址：[nvm][nvm]
 3. 配置 NPM_HOME 环境变量
 path环境变量添加%NPM_HOME%，注意：要将这个环境变量放在%NVM_SYMLINK% 的前面才有生效，否则被它抢先覆盖了。
 
+npm install moduleName 命令
+1. 安装模块到项目node_modules目录下。
+2. 不会将模块依赖写入devDependencies或dependencies 节点。
+3. 运行 npm install 初始化项目时不会下载模块。
+
+npm install -g moduleName 命令
+1. 安装模块到全局，不会在项目node_modules目录中保存模块包。
+2. 不会将模块依赖写入devDependencies或dependencies 节点。
+3. 运行 npm install 初始化项目时不会下载模块。
+
+npm install -save moduleName 命令
+1. 安装模块到项目node_modules目录下。
+2. 会将模块依赖写入dependencies 节点。
+3. 运行 npm install 初始化项目时，会将模块下载到项目目录下。
+4. 运行npm install --production或者注明NODE_ENV变量值为production时，会自动下载模块到node_modules目录中。
+
+npm install -save-dev moduleName 命令
+1. 安装模块到项目node_modules目录下。
+2. 会将模块依赖写入devDependencies 节点。
+3. 运行 npm install 初始化项目时，会将模块下载到项目目录下。
+4. 运行npm install --production或者注明NODE_ENV变量值为production时，不会自动下载模块到node_modules目录中。
+
 ### nrm安装
 nrm(npm registry manager)，即npm的下载源管理工具，安装步骤如下：
 
